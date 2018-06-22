@@ -1,0 +1,23 @@
+1.
+Write a Java program that reads an integer and check whether it is negative, zero, or positive.
+
+Input a number: 7
+Expected Output : Number is positive
+
+2.
+Write a Java program that accepts three numbers and prints "All numbers are equal" if all three numbers are equal, "All numbers are different" if all three numbers are different and "Neither all are equal or different" otherwise.
+
+Sample Data
+
+Input first number: 2564
+Input second number: 3526
+Input third number: 2456
+Expected Output : All numbers are different
+
+3.
+Write a program to print the contents of a file
+The program should take the name of the file as input.
+
+4.
+Write a program to write some text to a file. The text can be anything.
+The program should take the name of the file as input.

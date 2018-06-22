@@ -60,3 +60,76 @@ Divided by 5:
 
 Divided by 3 & 5:
 15, 30, 45, 60, 75, 90,
+
+5.
+Write a program to count the letters, spaces, numbers and other characters of an input string.
+
+Sample Output
+
+The string is :  Aa kiu, I swd skieo 236587. GH kiu: sieo?? 25.33
+
+letter: 23
+space: 9
+number: 10
+other: 6
+
+6.
+Write a Java program to convert temperature from Farenheit to Celsius degree.
+The program should prompt the user to enter the temperature in Farenheit.
+
+Input a degree in Fahrenheit: 212
+
+Expected Output:
+212.0 degree Fahrenheit is equal to 100.0 in Celsius
+
+7.
+Write a program in Java to display the pattern like right angle triangle with a number.
+
+Test Data
+
+Input number of rows : 10
+
+Expected Output :
+
+1
+12
+123
+1234
+12345
+123456
+1234567
+12345678
+123456789
+12345678910
+
+8.
+Write a program in Java to make such a pattern like a pyramid with a number which will repeat the number in the same row.
+
+       1
+      2 2
+     3 3 3
+    4 4 4 4
+
+9.
+Write a program in Java to display the pattern like a diamond. Go to the editor
+
+Sample Data
+
+Input number of rows (half of the diamond) : 7
+
+Expected Output :
+
+
+      *
+     ***
+    *****
+   *******
+  *********
+ ***********
+*************
+ ***********
+  *********
+   *******
+    *****
+     ***
+      *
