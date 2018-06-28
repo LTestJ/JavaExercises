@@ -1,4 +1,4 @@
-package probSet2;
+package problem_set2;
 
 import java.util.Scanner;
 
