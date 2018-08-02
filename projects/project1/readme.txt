@@ -16,15 +16,15 @@ Write a program which displays the following:
 5 - Save to file
 6 - Exit
 
-Choose one option : 
+Choose one option :
 ---
 
-User can enter any number from 1 to 5 and the program 
+User can enter any number from 1 to 5 and the program
 should just print out the following.
 
 "you entered 4 (the correct number)"
 
-After this the program should show the menu again and 
+After this the program should show the menu again and
 wait for another user input.
 
 If the user chooses 6 any time, exit the application.
@@ -37,8 +37,8 @@ in the program there should be a function like the following:
 int showMenu() {
 }
 
-in the function we need code to show the menu and take 
-input from the user. The function returns the number 
+in the function we need code to show the menu and take
+input from the user. The function returns the number
 the user have chosen.
 
 In the main() function there will be a loop
@@ -52,14 +52,14 @@ In the main() function there will be a loop
       case 2:
             break;
       case 3:
-            break;  
+            break;
       case 4:
             break;
       case 5:
             break;
       case 6:
             //exit
-            break; 
+            break;
       default:
            //show error message
     }
@@ -67,31 +67,53 @@ In the main() function there will be a loop
 
 Step 2 :
 
-In this step we are going to implement the functionality
-for creating a new employee. i.e if the user chose 1 
-from the previous menu, we should let him create a 
-new employee record in the database.
+In this step we are going to implement the following
+functionality
 
-So if the user chose 1, the program should prompt the
-user for entering name, phone and address.
+1) Create an entry for an employee in the database
+2) Show the list of all employees in the database
+3) Show the detail about a specific employee.
 
-enter name :
+We will tackle these one by one. First one is creating
+an entry for a new employee in the database.
 
-after that
+For this we should ask the user for details about the
+employee and save the information in memory for
+recalling later.
 
-enter phone :
+Storing information in memory doesn't mean we write
+the information to a file. Instead we just keep the
+data we received in memory in a structed manner so
+that we can get this data if required.
 
-after that
+The way to do this is as follows;
 
-enter address:
+We are going to define a class to keep employee
+data.
 
-Once we have all of these we should save the information
-in memory for recalling later.
+class Employee {
+  int id;
+  String name;
+  String phone;
+  String address;
+};
+
+So in the code when we have information about a
+user (input by the user) we create a Employee
+Object.
+
+Employee e = new Employee();
+e.id = <id is not taken from user>
+e.name = <name input by user>;
+e.phone = <phone input by user>;
+e.address = <address input by user>;
+
+In addition we will use an ArrayList to keep
+the list of all employees we know so far.
+
+ArrayList<Employee> employees = new Arraylist<Employee>();
 
 Step 3 :
-
-  
-Sample code
 
 Testing
 

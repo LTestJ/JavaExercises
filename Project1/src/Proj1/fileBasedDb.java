@@ -6,23 +6,49 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Scanner;
+import java.util.ArrayList;
 
-public class fileBasedDb {
+class Employee {
+    public unsigned id;
+    public String name;
+    public String phone;
+    public String address;
+};
+
+public class FileBasedDb {
+    /*
+       We define the ArrayList here because we need methods
+       in the class to access it. If we define the ArrayList
+       in a method, only that method can access it.
+    */
+    ArrayList<Employee> employees = new Employee<Employee>();
+
+    /*
+       We don't want to take the database file name from user
+    */
+    String dbFileName = "employees.db";
+
     public static void main(String[] args) throws IOException {
+        /*
+          while(true) creates an infinite loop. We want to
+          loop back until user choose the option to exit.
+          When that happens we exit the loop explicitly
+          by using System.exit()
+        */
         while (true) {
             int choice = showMenu();
             switch(choice) {
             case 1 :
                 System.out.println("User pressed 1\n");
-                choice1Details();
-                //writeToFile();
-                readFrom();
+                createEmployee();
                 break;
             case 2 :
                 System.out.println("User pressed 2\n");
+                showEmployees();
                 break;
             case 3 :
                 System.out.println("User pressed 3\n");
+                showEmployeeDetail();
                 break;
             case 4 :
                 System.out.println("User pressed 4\n");
@@ -39,6 +65,10 @@ public class fileBasedDb {
         }
     }
 
+    /*
+       This function shows a menu to the user. Reads user input
+       and returns the user choice as an integer from the function.
+    */
     public static int showMenu() {
         System.out.println("1 - Create a new employee \n");
         System.out.println("2 - Show list of employees \n");
@@ -51,11 +81,16 @@ public class fileBasedDb {
         Scanner scan = new Scanner(System.in);
         System.out.print("\nEnter option number here: ");
         int option = scan.nextInt();
-        //scan.close();
+        scan.close();
         return option;
     }
 
-    public static String choice1Details() throws IOException {
+    /*
+       This function gets details about the user and creates
+       and Employee object and stores it in the in memory
+       Employee list (ArrayList employees).
+    */
+    public static void createEmployee() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter your name: \n");
         String name = scan.next();
@@ -63,46 +98,34 @@ public class fileBasedDb {
         String phone = scan.next();
         System.out.print("Thanks. Enter your address: \n");
         String address = scan.next();
-        //scan.close();
+        scan.close();
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Thank you! \nInput an existing fileName : \n");
-        String fileName = sc.next();
-        //sc.close();
+        /* Continue your code below here */
 
-        //while ((name = scan.next()) != null)
-        Files.write(Paths.get(fileName), name.getBytes(StandardCharsets.UTF_8),
-                    StandardOpenOption.CREATE);
-        //while ((phone = scan.next()) != null)
-        Files.write(Paths.get(fileName), phone.getBytes(StandardCharsets.UTF_8),
-                    StandardOpenOption.CREATE);
-        //while ((address = scan.next()) != null)
-        Files.write(Paths.get(fileName), address.getBytes(StandardCharsets.UTF_8),
-                    StandardOpenOption.CREATE);
-        return name;
-        //return address;
-        //return phone;
+        return;
     }
 
-    public static void writeToFile() throws IOException  {
-        //to write to a file
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Thank you! \nInput an existing fileName : \n");
-        String fileName = sc.next();
-        sc.close();
+    /*
+      Display the list of employees in the format
 
-        String content = "This is my new contentxxx to asdff";
-        Files.write(Paths.get(fileName), content.getBytes(StandardCharsets.UTF_8),
-                    StandardOpenOption.CREATE);
+      employee id : employee name
+    */
+    public static void showEmployees() {
+        /* Write your code below here */
     }
 
-    public static void readFrom() throws IOException {
-        //to read from the input file
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Thanks; Input your file name : \n");
-        String fileName = sc.next();
-        sc.close();
-        String content = new String(Files.readAllBytes(Paths.get(fileName)));
-        System.out.println(content);
+    /*
+      Funtion should take employee id as input from the user and
+      prints the details about the employee in the following format:
+
+      id      : employee id
+      name    : employee name
+      phone   : employee phone
+      address : employee address
+
+      Note how the output is aligned in colums
+    */
+    public static void showEmployeeDetail() {
+        /* Write your code below here */
     }
 }
