@@ -13,6 +13,6 @@ public class FileContents {
         sc.close();        
         String content = new String(Files.readAllBytes(Paths.get(fileName)));
         System.out.println(content);
-        
+        //reads from the input file
 	}
 }

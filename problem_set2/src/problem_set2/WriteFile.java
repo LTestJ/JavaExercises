@@ -10,11 +10,12 @@ import java.util.Scanner;
 public class WriteFile {
 
 	public static void main(String[] args) throws IOException  {
+		//to write some text to the input file
 		Scanner sc = new Scanner(System.in);              
         System.out.println("Input your file name: ");        
         String fileName = sc.next(); 
         sc.close();        
-        String content = "This is my new contentxx";
+        String content = "This is my new contentxxxxx";
         Files.write(Paths.get(fileName), content.getBytes(StandardCharsets.UTF_8), 
         		StandardOpenOption.CREATE);        
 	}
