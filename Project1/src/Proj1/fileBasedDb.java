@@ -9,24 +9,26 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 class Employee {
-    public unsigned id;
+    public int id;
     public String name;
     public String phone;
     public String address;
 };
 
-public class FileBasedDb {
+public class fileBasedDb {
     /*
        We define the ArrayList here because we need methods
        in the class to access it. If we define the ArrayList
        in a method, only that method can access it.
     */
-    ArrayList<Employee> employees = new Employee<Employee>();
+    static ArrayList<Employee> employees = new ArrayList<Employee>();
 
     /*
        We don't want to take the database file name from user
     */
-    String dbFileName = "employees.db";
+    static String dbFileName = "employees.db";
+    
+    static int employeeId = 0;
 
     public static void main(String[] args) throws IOException {
         /*
@@ -87,7 +89,7 @@ public class FileBasedDb {
 
     /*
        This function gets details about the user and creates
-       and Employee object and stores it in the in memory
+       an Employee object and stores it in the in memory
        Employee list (ArrayList employees).
     */
     public static void createEmployee() {
@@ -101,7 +103,13 @@ public class FileBasedDb {
         scan.close();
 
         /* Continue your code below here */
-
+        Employee e = new Employee();
+        e.name = name;
+        e.phone = phone;
+        e.address = address;
+        e.id = employeeId;        
+      
+        employees.add(e);            
         return;
     }
 
@@ -115,7 +123,7 @@ public class FileBasedDb {
     }
 
     /*
-      Funtion should take employee id as input from the user and
+      Function should take employee id as input from the user and
       prints the details about the employee in the following format:
 
       id      : employee id
