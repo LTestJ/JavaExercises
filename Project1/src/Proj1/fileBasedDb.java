@@ -83,7 +83,7 @@ public class fileBasedDb {
         Scanner scan = new Scanner(System.in);
         System.out.print("\nEnter option number here: ");
         int option = scan.nextInt();
-        scan.close();
+        //scan.close();
         return option;
     }
 
@@ -107,7 +107,8 @@ public class fileBasedDb {
         e.name = name;
         e.phone = phone;
         e.address = address;
-        e.id = employeeId;        
+        e.id = employeeId;   
+        employeeId = employeeId + 1;
       
         employees.add(e);            
         return;
@@ -120,8 +121,11 @@ public class fileBasedDb {
     */
     public static void showEmployees() {
         /* Write your code below here */
+    	
+    	for (Employee e : employees) {
+    		System.out.println(e.id + " : " + e.name + "\n");
+    	}  	
     }
-
     /*
       Function should take employee id as input from the user and
       prints the details about the employee in the following format:
@@ -135,5 +139,21 @@ public class fileBasedDb {
     */
     public static void showEmployeeDetail() {
         /* Write your code below here */
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter your id : \n");
+        String id = scan.next();
+        
+        // id is string, need to convert to integer//
+    	int result = Integer.parseInt(id);			
+    	System.out.println(result);
+    	
+        
+        Employee e = employees[id]; //getting error here//        
+    	System.out.println("id      : " + e.id);
+    	System.out.println("iname   : " + e.name);
+    	System.out.println("phone   : " + e.phone);
+    	System.out.println("address : " + e.address);
+        
+    	
     }
 }
