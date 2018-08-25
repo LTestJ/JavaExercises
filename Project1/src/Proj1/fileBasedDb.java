@@ -146,18 +146,17 @@ public class fileBasedDb {
         // idStr is string, need to convert to integer
     	int id = Integer.parseInt(idStr);
     	
-    	if (id <= employees.size())
+    	if (id <= (employees.size() - 1))
     	{	
-    	Employee e = employees.get(id);  
-    	System.out.println("id      : " + e.id);
-    	System.out.println("name    : " + e.name);
-    	System.out.println("phone   : " + e.phone);
-    	System.out.println("address : " + e.address);
+	    	Employee e = employees.get(id);  
+	    	System.out.println("id      : " + e.id);
+	    	System.out.println("name    : " + e.name);
+	    	System.out.println("phone   : " + e.phone);
+	    	System.out.println("address : " + e.address);
         }
     	else	
     	{ 
-    	System.out.println("Invalid id, Please try again"); 	
-    	}
-    	
+    		System.out.println("Invalid id, Please try again"); 	
+    	}    	
     }
 }
