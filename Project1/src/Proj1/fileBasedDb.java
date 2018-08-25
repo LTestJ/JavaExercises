@@ -27,7 +27,7 @@ public class fileBasedDb {
        We don't want to take the database file name from user
     */
     static String dbFileName = "employees.db";
-    
+
     static int employeeId = 0;
 
     public static void main(String[] args) throws IOException {
@@ -41,19 +41,16 @@ public class fileBasedDb {
             int choice = showMenu();
             switch(choice) {
             case 1 :
-                System.out.println("User pressed 1\n");
                 createEmployee();
                 break;
             case 2 :
-                System.out.println("User pressed 2\n");
                 showEmployees();
                 break;
             case 3 :
-                System.out.println("User pressed 3\n");
                 showEmployeeDetail();
                 break;
             case 4 :
-                System.out.println("User pressed 4\n");
+                removeEmployee();
             case 5 :
                 System.out.println("User pressed 5\n");
                 break;
@@ -107,10 +104,14 @@ public class fileBasedDb {
         e.name = name;
         e.phone = phone;
         e.address = address;
-        e.id = employeeId;   
+        e.id = employeeId;
+
+        // increment counter for id
         employeeId = employeeId + 1;
-        
-        employees.add(e);            
+
+        // add to database
+        employees.add(e);
+
         return;
     }
 
@@ -121,10 +122,10 @@ public class fileBasedDb {
     */
     public static void showEmployees() {
         /* Write your code below here */
-    	
+
     	for (Employee e : employees) {
     		System.out.println(e.id + " : " + e.name + "\n");
-    	}  	
+    	}
     }
     /*
       Function should take employee id as input from the user and
@@ -140,23 +141,47 @@ public class fileBasedDb {
     public static void showEmployeeDetail() {
         /* Write your code below here */
     	Scanner scan = new Scanner(System.in);
-        System.out.print("Enter your id : \n");
-        String idStr = scan.nextLine();       
-       
+        System.out.print("Enter employee id : \n");
+
+        // get id entered by user
+        String idStr = scan.nextLine();
+
         // idStr is string, need to convert to integer
     	int id = Integer.parseInt(idStr);
-    	
-    	if (id <= (employees.size() - 1))
-    	{	
-	    	Employee e = employees.get(id);  
-	    	System.out.println("id      : " + e.id);
-	    	System.out.println("name    : " + e.name);
-	    	System.out.println("phone   : " + e.phone);
-	    	System.out.println("address : " + e.address);
+
+        //TODO : go through each element and find the employee
+        //with id entered buy the user
+
+    	if (id <= (employees.size() - 1)) // This check will be unnecessary
+                                          // once we search through the db
+    	{
+
+	    Employee e = employees.get(id);
+	    System.out.println("id      : " + e.id);
+	    System.out.println("name    : " + e.name);
+	    System.out.println("phone   : " + e.phone);
+	    System.out.println("address : " + e.address);
         }
-    	else	
-    	{ 
-    		System.out.println("Invalid id, Please try again"); 	
-    	}    	
+    	else
+    	{
+    	    System.out.println("Invalid id, Please try again");
+    	}
+    }
+
+    public static void removeEmployee() {
+    	Scanner scan = new Scanner(System.in);
+        System.out.print("Enter employee id  to be removed: \n");
+
+        // get id entered by user
+        String idStr = scan.nextLine();
+
+        // idStr is string, need to convert to integer
+    	int id = Integer.parseInt(idStr);
+
+        //TODO : go through each element in the db and find the employee
+        //with id entered buy the user and remove the record
+        //for that employee.
+
+        // Write your code here
     }
 }
