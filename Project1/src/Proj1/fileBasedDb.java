@@ -94,13 +94,13 @@ public class fileBasedDb {
     */
     public static void createEmployee() {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Enter your name: \n");
-        String name = scan.next();
-        System.out.print("Thanks. Enter your phone# : \n");
-        String phone = scan.next();
-        System.out.print("Thanks. Enter your address: \n");
-        String address = scan.next();
-        scan.close();
+        System.out.print("\nEnter your name: ");
+        String name = scan.nextLine();
+        System.out.print("\nThanks. Enter your phone# : ");
+        String phone = scan.nextLine();
+        System.out.print("\nThanks. Enter your address: ");
+        String address = scan.nextLine();
+        //scan.close();
 
         /* Continue your code below here */
         Employee e = new Employee();
@@ -109,7 +109,7 @@ public class fileBasedDb {
         e.address = address;
         e.id = employeeId;   
         employeeId = employeeId + 1;
-      
+        
         employees.add(e);            
         return;
     }
@@ -135,25 +135,29 @@ public class fileBasedDb {
       phone   : employee phone
       address : employee address
 
-      Note how the output is aligned in colums
+      Note how the output is aligned in columns
     */
     public static void showEmployeeDetail() {
         /* Write your code below here */
-        Scanner scan = new Scanner(System.in);
+    	Scanner scan = new Scanner(System.in);
         System.out.print("Enter your id : \n");
-        String id = scan.next();
-        
-        // id is string, need to convert to integer//
-    	int result = Integer.parseInt(id);			
-    	System.out.println(result);
+        String idStr = scan.nextLine();       
+       
+        // idStr is string, need to convert to integer
+    	int id = Integer.parseInt(idStr);
     	
-        
-        Employee e = employees[id]; //getting error here//        
+    	if (id <= employees.size())
+    	{	
+    	Employee e = employees.get(id);  
     	System.out.println("id      : " + e.id);
-    	System.out.println("iname   : " + e.name);
+    	System.out.println("name    : " + e.name);
     	System.out.println("phone   : " + e.phone);
     	System.out.println("address : " + e.address);
-        
+        }
+    	else	
+    	{ 
+    	System.out.println("Invalid id, Please try again"); 	
+    	}
     	
     }
 }
