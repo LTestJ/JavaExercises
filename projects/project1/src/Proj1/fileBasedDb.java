@@ -151,7 +151,7 @@ public class fileBasedDb {
 
         //TODO : go through each element and find the employee
         //with id entered buy the user
-
+    	for (int i = 0; i < employees.size(); i++){
     	if (id <= (employees.size() - 1)) // This check will be unnecessary
                                           // once we search through the db
     	{
@@ -166,6 +166,7 @@ public class fileBasedDb {
     	{
     	    System.out.println("Invalid id, Please try again");
     	}
+    	}
     }
 
     public static void removeEmployee() {
@@ -174,7 +175,6 @@ public class fileBasedDb {
 
         // get id entered by user
         String idStr = scan.nextLine();
-
         // idStr is string, need to convert to integer
     	int id = Integer.parseInt(idStr);
 
@@ -183,5 +183,36 @@ public class fileBasedDb {
         //for that employee.
 
         // Write your code here
+    		
+//    	       Employee tmpEmployer = null;
+//
+//    	       for(Employee e : employees) {
+//    	          // if(e.getFirstName().equals(name)) 
+//    	    	   if(e.id().equals()
+//    	          {            
+//    	               break;
+//    	           }
+//    	       }
+//
+//    	       if(tmpEmployer != null){
+//    	         // remove the employee to the pool
+//    	         employees.remove(tmpEmployer);
+//
+//    	       } else {
+//    	         System.out.println("Invalid id");
+//    	       }
+    	//}
+    	
+    	
+    	for (int i = 0; i < employees.length; i++) {
+    	       if (employee[i] != null && employees[i].getFirstName().equals(name)){
+    	           employees[i] = null;
+    	         break; 
+    	       }
+
+    	       if (i == employees.length - 1) {
+    	           System.out.println("Invalid id.")
+    	  	   }
+
     }
 }

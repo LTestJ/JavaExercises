@@ -1,0 +1,9 @@
+Existing content1.This is the content to write into file
+Second line start here 
+ third line here; try agian !2.This is the content to write into file
+Second line start here 
+ third line here; try agian !st line 
+
+Second line 
+
+ third line 
