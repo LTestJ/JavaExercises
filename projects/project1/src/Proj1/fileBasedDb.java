@@ -51,6 +51,7 @@ public class fileBasedDb {
                 break;
             case 4 :
                 removeEmployee();
+                break;
             case 5 :
                 System.out.println("User pressed 5\n");
                 break;
@@ -122,9 +123,8 @@ public class fileBasedDb {
     */
     public static void showEmployees() {
         /* Write your code below here */
-
     	for (Employee e : employees) {
-    		System.out.println(e.id + " : " + e.name + "\n");
+    		System.out.println(e.id + " : " + e.name + " ");
     	}
     }
     /*
@@ -151,22 +151,22 @@ public class fileBasedDb {
 
         //TODO : go through each element and find the employee
         //with id entered buy the user
-    	for (int i = 0; i < employees.size(); i++){
-    	if (id <= (employees.size() - 1)) // This check will be unnecessary
-                                          // once we search through the db
-    	{
-
-	    Employee e = employees.get(id);
-	    System.out.println("id      : " + e.id);
-	    System.out.println("name    : " + e.name);
-	    System.out.println("phone   : " + e.phone);
-	    System.out.println("address : " + e.address);
-        }
-    	else
-    	{
-    	    System.out.println("Invalid id, Please try again");
-    	}
-    	}
+    	boolean found = false; //to mark that item is found
+    	for (int i = 0; i < employees.size(); i++) {
+    		Employee e = employees.get(i);
+		    if (e.id == id) {
+			    System.out.println("id      : " + e.id);
+			    System.out.println("name    : " + e.name);
+			    System.out.println("phone   : " + e.phone);
+			    System.out.println("address : " + e.address);
+			    found = true;			    
+			    break;
+		    }  	    	
+    	}  
+ 
+		if (found == false)	{
+    		System.out.println("Invalid id, Please try again");
+		}   
     }
 
     public static void removeEmployee() {
@@ -183,36 +183,18 @@ public class fileBasedDb {
         //for that employee.
 
         // Write your code here
-    		
-//    	       Employee tmpEmployer = null;
-//
-//    	       for(Employee e : employees) {
-//    	          // if(e.getFirstName().equals(name)) 
-//    	    	   if(e.id().equals()
-//    	          {            
-//    	               break;
-//    	           }
-//    	       }
-//
-//    	       if(tmpEmployer != null){
-//    	         // remove the employee to the pool
-//    	         employees.remove(tmpEmployer);
-//
-//    	       } else {
-//    	         System.out.println("Invalid id");
-//    	       }
-    	//}
-    	
-    	
-    	for (int i = 0; i < employees.length; i++) {
-    	       if (employee[i] != null && employees[i].getFirstName().equals(name)){
-    	           employees[i] = null;
-    	         break; 
-    	       }
-
-    	       if (i == employees.length - 1) {
-    	           System.out.println("Invalid id.")
-    	  	   }
-
+    	boolean found = false; //to mark that item is found
+     	for (int i = 0; i < employees.size(); i++) {
+     		Employee e = employees.get(i);     		   		
+			if (e.id == id) {
+				employees.remove(e.id); 
+				System.out.println("Employee id is removed! \n");
+				found = true;
+				break;
+			}   	     	 
+     	}     		 
+		if (found == false)	{
+    		System.out.println("Invalid id, Please try again");
+		} 
     }
 }
