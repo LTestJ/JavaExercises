@@ -1,0 +1,10 @@
+package problem_set1;
+
+public class FooBar {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
