@@ -33,7 +33,8 @@ public class fileBasedDb {
     
 	//Delimiter used in CSV file
 	private static final String COMMA_DELIMITER = ",";
-	private static final String NEW_LINE_SEPARATOR = "\n";	
+	private static final String NEW_LINE_SEPARATOR = "\n";
+	
 	//CSV file header
 	private static final String FILE_HEADER = "id,name,phone,addres";
 
@@ -121,7 +122,6 @@ public class fileBasedDb {
         employees.add(e);
 
         return;
-        
 //        public String toString() {
 //        	        return "Employee [id=" + e.id + ", name=" + e.name + ", phone=" + e.phone + ", address=" + e.address + "]";
 //        	    }

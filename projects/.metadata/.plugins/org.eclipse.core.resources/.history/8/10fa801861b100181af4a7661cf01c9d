@@ -1,6 +1,5 @@
 package Proj1;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -30,12 +29,6 @@ public class fileBasedDb {
     static String dbFileName = "employees.db";
 
     static int employeeId = 0;
-    
-	//Delimiter used in CSV file
-	private static final String COMMA_DELIMITER = ",";
-	private static final String NEW_LINE_SEPARATOR = "\n";	
-	//CSV file header
-	private static final String FILE_HEADER = "id,name,phone,addres";
 
     public static void main(String[] args) throws IOException {
         /*
@@ -121,7 +114,6 @@ public class fileBasedDb {
         employees.add(e);
 
         return;
-        
 //        public String toString() {
 //        	        return "Employee [id=" + e.id + ", name=" + e.name + ", phone=" + e.phone + ", address=" + e.address + "]";
 //        	    }
@@ -211,64 +203,14 @@ public class fileBasedDb {
 		} 
     }
     
-//    public static void saveToFile() {
-//        /* Write your code below here */
-//    	for (Employee e : employees) {
-//    		System.out.println("Employee [id=" + e.id + ", name=" + e.name + ", phone=" + e.phone + ", address=" + e.address + "]");
-//    	}
+    public static void saveToFile() {
+        /* Write your code below here */
+    	for (Employee e : employees) {
+    		System.out.println("Employee [id=" + e.id + ", name=" + e.name + ", phone=" + e.phone + ", address=" + e.address + "]");
+    	}
 //        public String toString() {
 //            return "Employee [id=" + e.id + ", name=" + e.name + ", phone=" + e.phone + ", address=" + e.address + "]";
 //        }
-//    }
-    
-//    public class CsvFileWriter {
-//    	//Delimiter used in CSV file
-//    	private static final String COMMA_DELIMITER = ",";
-//    	private static final String NEW_LINE_SEPARATOR = "\n";
-//    	
-//    	//CSV file header
-//    	private static final String FILE_HEADER = "id,name,phone,addres";
-    	
-    	public static void saveToFile() {
-    		//Student student1 = new Student(1, "Ahmed", "Mohamed", "M", 25);
-    		//List students = new ArrayList();
-    		//Employee e = new Employee();
-    		FileWriter fileWriter = null;
-		        try {
-		            fileWriter = new FileWriter(dbFileName);
-
-		            //Write the CSV file header
-		            fileWriter.append(FILE_HEADER.toString());
-
-		            //Add a new line separator after the header
-		            fileWriter.append(NEW_LINE_SEPARATOR);
-		            
-		            //Write a new student object list to the CSV file
-		            	for (Employee e : employees) {
-                            fileWriter.append(String.valueOf(e.id));
-                            fileWriter.append(COMMA_DELIMITER);
-                            fileWriter.append(e.name);
-                            fileWriter.append(COMMA_DELIMITER);
-                            fileWriter.append(e.phone);
-                            fileWriter.append(COMMA_DELIMITER);
-                            fileWriter.append(e.address);
-                            fileWriter.append(NEW_LINE_SEPARATOR);
-		                }
-		            	
-		            	System.out.println("CSV file was created successfully !!!");
-		        } catch (Exception x) {
-			            System.out.println("Error in CsvFileWriter !!!");
-			            x.printStackTrace();
-			    } finally {
-			            
-			    	try {
-			                fileWriter.flush();
-			                fileWriter.close();
-			            } catch (IOException x) {
-			                System.out.println("Error while flushing/closing fileWriter !!!");
-			                x.printStackTrace();
-			            }
-			        }
- 	
     }
+
 }
