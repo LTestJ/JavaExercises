@@ -69,7 +69,7 @@ public class fileBasedDb {
                 saveToFile();
                 break;
             case 6 :
-                System.out.println("Exiting ...\n");
+                System.out.println("Oops ... Exiting ...\n");
                 System.exit(0);
                 break;
             default :
@@ -119,9 +119,8 @@ public class fileBasedDb {
 				    }
 		    		fields = line.split(COMMA_DELIMITER);
 		    		
-		    		Employee e = new Employee();
-		     		int id = Integer.parseInt(fields[0]); 
-		    		employeeId = id + 1;
+		    		Employee e = new Employee();	    		
+		     		int id = Integer.parseInt(fields[0]);       		
 		            e.id = id;	            
 		            e.name = fields[1];   
 		            e.phone = fields[2];

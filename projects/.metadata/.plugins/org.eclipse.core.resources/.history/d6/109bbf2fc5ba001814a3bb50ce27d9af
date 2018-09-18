@@ -69,7 +69,7 @@ public class fileBasedDb {
                 saveToFile();
                 break;
             case 6 :
-                System.out.println("Exiting ...\n");
+                System.out.println("Oops ... Exiting ...\n");
                 System.exit(0);
                 break;
             default :
@@ -112,24 +112,21 @@ public class fileBasedDb {
 		try {
 			csvReader = new BufferedReader(new FileReader(csvFilename));
 			while((line = csvReader.readLine()) != null) {
-				//while((line = csvReader.readLine()) != null) {
-				    if(iteration == 0) {
-				        iteration++;  
-				        continue;
-				    }
-		    		fields = line.split(COMMA_DELIMITER);
-		    		
-		    		Employee e = new Employee();
-		     		int id = Integer.parseInt(fields[0]); 
-		    		employeeId = id + 1;
-		            e.id = id;	            
-		            e.name = fields[1];   
-		            e.phone = fields[2];
-		            e.address = fields[3];
-		            // add to database
-		            employees.add(e);	    	
-		    	}
-			
+//			    if(iteration == 0) {
+//			        iteration++;  
+//			        continue;
+//			    }
+	    		fields = line.split(COMMA_DELIMITER);
+	    		
+	    		Employee e = new Employee();	    		
+	     		int id = Integer.parseInt(fields[0]);       		
+	            e.id = id;	            
+	            e.name = fields[1];   
+	            e.phone = fields[2];
+	            e.address = fields[3];
+	            // add to database
+	            employees.add(e);	    	
+	    	}
 		}
 		catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -272,7 +269,7 @@ public class fileBasedDb {
 
 			// Write a new e object list to the CSV file
 			for (Employee e : employees) {
-				fileWriter.append(String.valueOf(e.id)); //
+				fileWriter.append(String.valueOf(e.id));
 				fileWriter.append(COMMA_DELIMITER);
 				fileWriter.append(e.name);
 				fileWriter.append(COMMA_DELIMITER);
