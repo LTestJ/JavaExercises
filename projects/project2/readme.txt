@@ -38,6 +38,8 @@ Requirements
 
 Write a Java system which meets the above requirements.
 
+Example Structure :
+
 class Vehicle {
   
   String numberPlate;
@@ -53,3 +55,40 @@ class ParkingLot {
    }
 }
 
+Identifying detailed program reqiuirements
+------------------------------------------
+
+The clear is sitting in the Kiosk. What all events he will face ?
+
+1. A car wants to enter the lot
+2. A car wants to exit the lot
+
+So the program should have the following menu options ?
+
+a) Display available spots
+
+   1 2 3 4
+1  o x x x
+2  x x x x
+3  x x x x
+4  x x x x
+
+Spot --> (1,1)
+
+b) Assign a spot
+
+  Take car number plate
+  assign an empty spot
+  Mark the entry time
+  issue a ticket
+  open the door
+   
+c) Release a vehicle
+
+  Override
+    Or
+  calculate time
+  take payment
+  issue receipt
+  
+  open door  
