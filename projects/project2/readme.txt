@@ -2,7 +2,7 @@ Parking lot
 -----------
 
 Assume we have some space which we want to 
-utilize as a parling lot. We need to write
+utilize as a parking lot. We need to write
 a software system to keep track of vehicles
 and take care of operations like payment,
 reports etc.
@@ -55,40 +55,84 @@ class ParkingLot {
    }
 }
 
-Identifying detailed program reqiuirements
-------------------------------------------
+Getting started
+----------------
 
-The clear is sitting in the Kiosk. What all events he will face ?
+We already did project 1. So we should see how is this project 
+similar to the previous project. The above section specifies
+some of the classes that we can define to help implement this
+projec; like 'Vehicle' and 'ParkingLot'
 
-1. A car wants to enter the lot
-2. A car wants to exit the lot
 
-So the program should have the following menu options ?
+1. Representing parking spaces in the code
 
-a) Display available spots
+   We need some way to represent the parking lots inside
+   the parking lot class. In the first project, we needed
+   a way to hold all the employee records (objects of 
+   employee class) and we used an Arraylist.
 
-   1 2 3 4
-1  o x x x
-2  x x x x
-3  x x x x
-4  x x x x
+   For parking lots we can still use an ArrayList to hold
+   all the available parling lots. But for a change we will
+   represent the parling lots as a 2D Array. A 2D array is 
+   just a matrix; i.e. we can address the elements of the 
+   2D array using the row and column indices.
 
-Spot --> (1,1)
+   For example, if we have 16 spots, we can use a 4x4 Array.
+   Schematically it would look like this.
 
-b) Assign a spot
-
-  Take car number plate
-  assign an empty spot
-  Mark the entry time
-  issue a ticket
-  open the door
+   x x x x
+   x x x x
+   x x x x
+   x x x x
    
-c) Release a vehicle
+   if we have 14 parking spots, we would still use a 2D array.
+   We will just not use the last 2 spots.
 
-  Override
-    Or
-  calculate time
-  take payment
-  issue receipt
+2. Identifying detailed program reqiuirements
+
+   The next step in implementing the program is understanding 
+   the requirements clearly. We should know what we are going to
+   implement. This sets the scope of our project.
+
+   To get started with this step, we should think like the user
+   who is going to use the system.
+
+   The clear is sitting in the Kiosk. What all events he will face ?
+
+   1. A car wants to enter the lot
+   2. A car wants to exit the lot
+
+   So the program should have the following menu options ?
+
+   a) Display available spots
+
+        1 2 3 4
+     1  o x x x
+     2  x x x x
+     3  x x x x
+     4  x x x x
+
+     Spot --> (1,1)
+
+   b) Assign a spot
+
+     Take car number plate
+     assign an empty spot
+     Mark the entry time
+     issue a ticket
+     open the door
+   
+   c) Release a vehicle
+
+     Override
+       Or
+     calculate time
+     take payment
+     issue receipt
   
-  open door  
+     open door  
+
+   These requirments maynot be complete. But once you feel like
+   this is complete. You can start implementing the code one 
+   step at a time.
+    
