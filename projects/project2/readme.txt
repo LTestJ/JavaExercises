@@ -88,7 +88,56 @@ projec; like 'Vehicle' and 'ParkingLot'
    if we have 14 parking spots, we would still use a 2D array.
    We will just not use the last 2 spots.
 
-2. Identifying detailed program reqiuirements
+2. Identifying Classes and Relationships
+
+ParkingLost has spots
+Each spot can have a vehicle.
+
+From the above we can see we need 3 classes.
+
+class Spot;
+class Vehicle
+class ParkingLot;
+
+How do we represent these relationship in code ?
+
+class Vehicle {
+  String plateNumber;
+}
+
+class Spot {
+  int id;
+  Vehicle vh;
+  Datetime entryTime;
+}
+
+class ParkingLot {
+
+    // TODO : use a 2D array here instead
+    static Arraylist<Spot> spots = new ArrayList<Spot>;
+
+    fun1() {
+      // use spots and vehicle objects appropriately here
+    }
+
+    fun2() {
+      // use spots and vehicle objects appropriately here
+    }
+
+    fun3() {
+      // use spots and vehicle objects appropriately here
+    }
+
+    fun4() {
+      // use spots and vehicle objects appropriately here
+    }
+
+    fun4() {
+      // use spots and vehicle objects appropriately here
+    }
+}
+
+3. Identifying detailed program reqiuirements
 
    The next step in implementing the program is understanding 
    the requirements clearly. We should know what we are going to
@@ -135,4 +184,3 @@ projec; like 'Vehicle' and 'ParkingLot'
    These requirments maynot be complete. But once you feel like
    this is complete. You can start implementing the code one 
    step at a time.
-    
