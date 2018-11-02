@@ -9,7 +9,7 @@ reports etc.
 
 Lets say we have 10 parking spots.
 
-Requirements
+Requirements 
 ------------
 
 1. System should allow a car to enter the lot.
@@ -17,7 +17,7 @@ Requirements
    a. Make sure if a space is available
    b. If yes allot a spot
    c. Otherwise display a message "lot full"
-   d. After alloting the spot, open the door
+   d. After allotting the spot, open the door
    e. Also at the time of allotment start tracking the time.
    f. Decrement the no of spots
 
@@ -61,7 +61,7 @@ Getting started
 We already did project 1. So we should see how is this project 
 similar to the previous project. The above section specifies
 some of the classes that we can define to help implement this
-projec; like 'Vehicle' and 'ParkingLot'
+project; like 'Vehicle' and 'ParkingLot'
 
 
 1. Representing parking spaces in the code
@@ -72,8 +72,8 @@ projec; like 'Vehicle' and 'ParkingLot'
    employee class) and we used an Arraylist.
 
    For parking lots we can still use an ArrayList to hold
-   all the available parling lots. But for a change we will
-   represent the parling lots as a 2D Array. A 2D array is 
+   all the available parking lots. But for a change we will
+   represent the parking lots as a 2D Array. A 2D array is 
    just a matrix; i.e. we can address the elements of the 
    2D array using the row and column indices.
 
@@ -146,7 +146,7 @@ class ParkingLot {
    To get started with this step, we should think like the user
    who is going to use the system.
 
-   The clear is sitting in the Kiosk. What all events he will face ?
+   The clerk is sitting in the Kiosk. What all events he will face ?
 
    1. A car wants to enter the lot
    2. A car wants to exit the lot
@@ -181,6 +181,6 @@ class ParkingLot {
   
      open door  
 
-   These requirments maynot be complete. But once you feel like
+   These requirements may not be complete. But once you feel like
    this is complete. You can start implementing the code one 
    step at a time.
