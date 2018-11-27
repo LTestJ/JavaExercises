@@ -5,7 +5,7 @@ public class StringDemo2
     String str;
     int    len;
 
-    str = new String( "Elementary, my dear Watson!" );
+    str = new String( "		Elementary, 	my 	dear Watson!" );
 
     len = str.length();    // call the length() method of the object
 
