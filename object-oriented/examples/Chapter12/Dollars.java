@@ -10,10 +10,10 @@ public class Dollars
 
     System.out.println("Enter the cents: ");
     cents = scan.nextInt();
-    cents / divisor = dollar;
-    cents % divisor = cent;
+    dollar = cents / divisor;
+    cent = cents % divisor;
 
-    System.out.println("That is " + dollar + " Dollars and  " + cent + "Cents" );
+    System.out.println(cents + " cents is " + dollar + " Dollars and " + cent + " Cents" );
   }
 }
 
