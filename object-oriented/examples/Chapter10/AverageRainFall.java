@@ -1,18 +1,15 @@
 public class AverageRainFall
-{  
-  public static void main ( String[] args )  
+{
+  public static void main ( String[] args )
   {
 
-double RainFallMay = 12;
-double RainFallJune = 14;
-double RainFallApril = 8;
+    double RainFallApril = 12;
+    double RainFallMay = 14;
+    double RainFallJune = 8;
 
-    System.out.println("Average RainFall : " + RainFallMay + RainFallJUne + RainFallApril );
+    double result = ( RainFallApril + RainFallMay + RainFallJune) / 3;
+    System.out.println("Total Value: " + result);
+
   }
 }
 
-
-// Rainfall for April:  12
-// Rainfall for May  :  14
-// Rainfall for June:   8
-// Average rainfall:    11.333333
