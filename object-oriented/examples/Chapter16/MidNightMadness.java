@@ -18,6 +18,8 @@ public class MidNightMadness
        {
          if ( time < 1700)
             System.out.println("Child Matinee Ticket: " + " $2" );
+         else if (time > 2200)
+            System.out.println("Sorry, NO children after 10PM ");
          else
             System.out.println("Child Ticket:  " + "$4" );
        }

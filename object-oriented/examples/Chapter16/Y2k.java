@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Y2k
 {
@@ -13,14 +13,11 @@ public class Y2k
     System.out.println("Enter current year: ");
     curYr = scan.nextInt();
 
-    if ( birthYr < 18 )
-      System.out.println("Your age: " + (curYr - birthYr) );
+    if ( curYr < birthYr )
+       System.out.println("Your age: " + ( (curYr + 2000) - (birthYr+1900)));
+    else if ( curYr > birthYr )
+       System.out.println("Youe age: " + ( (curYr + 2000) - (birthYr+2000)));
     else
-    {
-      if (curYr > 18)
-      System.out.println("Youe age: " + (curYr - birthYr));
-      else
-      System.out.println("Your age: " +  ((curYr + 2000) - (birthYr+1900)) );
-    }
+       System.out.println("You may not need much help :)");
   }
 }
