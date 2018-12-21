@@ -20,36 +20,13 @@ public class AgeInSeconds
     System.out.println("Enter remaing days: ");
     days = scan.nextInt();
 
-      if( month == 1 ) {
-          D = 31;
-      }else if( month == 2 ) {
-          D = 28;
-      }else if( month == 3 ) {
-          D = 31;
+    int[] daysInMonth = {31,28,31,30,31,30,31,31,30,31,30,31};
+    for (int i = 0; i < month; i++)
+    {
+        D = D + daysInMonth[i];
+    }
 
-      }else if( month == 4 ) {
-          D = 30;
-      }else if( month == 5 ) {
-          D = 31;
-      }else if( month == 6 ) {
-          D = 30;
-
-      }else if( month == 7 ) {
-          D = 31;
-      }else if( month == 8 ) {
-          D = 31;
-      }else if( month == 9 ) {
-          D = 30;
-
-      }else if( month == 10 ) {
-          D = 31;
-      }else if( month == 11 ) {
-          D = 30;
-      }else {
-          D = 31 ;
-      }
-
-    int ageInSeconds = (years * 365 + month * D + days) * 24 * 60 * 60;
+    double ageInSeconds = ( (years * 365) + D + days ) * 24.0 * 60 * 60;
 
     DecimalFormat numform = new DecimalFormat("000,000,000,000");
     System.out.println( "\nYour Age in Seconds: " + numform.format( ageInSeconds) );

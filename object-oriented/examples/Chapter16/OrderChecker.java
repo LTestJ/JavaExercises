@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class OrderChecker
 {
@@ -17,25 +17,39 @@ public class OrderChecker
     System.out.println("Enter # of Washers: ");
     washers = scan.nextInt();
 
-    int cost;
-    cost = bolts * 5 + nuts * 3 + washers *1 ;
+    boolean found_error = false;
 
-    if ( bolts != nuts )
-    {
-       if (bolts > nuts)
-          System.out.println("Nuts are too low " );
+    int cost;
+    cost = bolts * 5 + nuts * 3 + washers * 1 ;
+
+    if ( bolts != nuts ) {
+       if (bolts < nuts ) {
+          System.out.println("Check the order : too many nuts");
+       }
        else
-          System.out.println( "Nuts are too much ");
+       {
+          System.out.println("Check the order: too few nuts ");
+       }
+
+       found_error = true;
     }
-    else
-    {
-       if (bolts < 2 * washers) 
-          System.out.println("Too less Washers");
+
+    if ( bolts != 2 * washers ) {
+       if ( 2 * washers > bolts) {
+          System.out.println("Check the order : too many washers");
+       }
        else
-          System.out.println("Too much Washers");
+       {
+          System.out.println("Check the order : too few washers");
+       }
+
+       found_error = true;
     }
-    System.out.println("Order is OK " );
-    System.out.println("Total Cost: " + cost);
+
+    if (found_error == false) {
+       System.out.println("Order is Ok");
+    }
+    System.out.println( "Total Cost: " + cost );
 
   }
 }
