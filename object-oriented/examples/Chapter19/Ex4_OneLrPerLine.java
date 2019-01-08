@@ -6,23 +6,17 @@ public class Ex4_OneLrPerLine
   public static void main (String[] args )
   {
     Scanner scan = new Scanner( System.in );
-    String first;
+    String word;
 
     System.out.print( "Enter your word: " );
-    first = scan.nextLine();
+    word = scan.nextLine();
 
-    int index = first.length();
-    System.out.println (charAt(int index));
-
-
-
-//    while ( combined <= total )
+    int i = 0;
+    while ( i < word.length() )
     {
-      System.out.print(".");
-      //combined = combined + 1;
+    System.out.println( word.charAt(i) );
+    i = i + 1;
     }
-
-    System.out.print(second);
   }
 }
 
