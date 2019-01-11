@@ -12,12 +12,14 @@ public class Ex1_Delicate
     final float ExpDeli = 3;
     final float NorDeli = 2;
 
+    final int total = 20;
+
     Scanner scan = new Scanner( System.in );
-    DecimalFormat numform = new DecimalFormat("00.00");
-    System.out.print("Enter the item: ");
+    DecimalFormat numform = new DecimalFormat("0.00");
+    System.out.print("Enter item: ");
     item = scan.nextLine();
 
-    System.out.print("Enter the price in cents: ");
+    System.out.print("Enter price in cents: ");
     float priceInCents = scan.nextFloat();
     price = priceInCents /100;
 
@@ -25,29 +27,35 @@ public class Ex1_Delicate
     delivery = scan.nextInt();
 
     System.out.println("Invoice: ");
-    System.out.println("     " + item + "        " + numform.format(price));
+    System.out.println( String.format( "  %-20s%s",item, price));
+
     float totalCost =0;
+
     if (delivery == 1) {
        if (price > 10) {
-          System.out.println("    Delivery     " + numform.format(ExpDeli));
-          System.out.println("    total        " + numform.format(price + ExpDeli));
+
+          System.out.println( String.format ( "  %-21s%s" , "Delivery", ExpDeli));
+          System.out.println( String.format ( "  %-20s%s" , "total", price+ExpDeli));
        }
        else
        {
-          System.out.println("    Delivery     " + numform.format(NorDeli + ExpDeli) );
-          System.out.println("    total        " + numform.format(price + NorDeli + ExpDeli));
+          System.out.println( String.format ( "  %-20s%s" , "Delivery", NorDeli+ExpDeli));
+          System.out.println( String.format ( "  %-20s%s" , "total", price+NorDeli+ExpDeli));
+
        }
     }
     else
     {
        if (price > 10) {
-          System.out.println("    Delivery     00.00");
-          System.out.println("    total        " + numform.format( price) );
+          System.out.println( String.format ( "  %-20s%s" , "Delivery", "00.00"));
+          System.out.println( String.format ( "  %-20s%s" , "total", price));
+
        }
        else
        {
-          System.out.println("    Delivery     " + numform.format(NorDeli));
-          System.out.println("    Total        " + numform.format(price + NorDeli) );
+          System.out.println( String.format ( "  %-20s%s" , "Delivery", NorDeli));
+          System.out.println( String.format ( "  %-20s%s" , "Delivery", price+NorDeli));
+
        }
     }
   }
