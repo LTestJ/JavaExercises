@@ -34,13 +34,13 @@ public class OrderChecker
        found_error = true;
     }
 
-    if ( bolts != 2 * washers ) {
-       if ( 2 * washers > bolts) {
-          System.out.println("Check the order : too many washers");
+    if ( 2 * bolts != washers ) {
+       if ( 2 * bolts > washers ) {
+          System.out.println("Check the order : too less washers");
        }
        else
        {
-          System.out.println("Check the order : too few washers");
+          System.out.println("Check the order : too many washers");
        }
 
        found_error = true;
