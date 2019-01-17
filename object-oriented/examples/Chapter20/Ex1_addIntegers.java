@@ -18,7 +18,7 @@ public class Ex1_addIntegers
       count--;
     }
 
-      System.out.println("Total sum: " + sum);
+    System.out.println("Total sum: " + sum);
   }
 }
 

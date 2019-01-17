@@ -24,18 +24,19 @@ public class Ex3_Average_SD
       integSqSum = integSqSum + integSq;
       N--;
     }
-      System.out.println("Total sum: " + sum);
-      System.out.println("IntegSqSum :" + integSqSum);
-      avg = sum/M;
-      avg2 = (sum/M) * (sum/M);
-      avg3 = integSqSum/M;
-      diff = avg3-avg2;
-      SD = Math.sqrt(diff);
-      System.out.println("avgerage of numbers: " + avg);
-      System.out.println("avg2: " + avg2);
-      System.out.println("avg3: " + avg3);
-      System.out.println("Diff: " + diff);
-      System.out.println("Standard Deviation: " + SD);
+
+    System.out.println("Total sum: " + sum);
+    System.out.println("IntegSqSum :" + integSqSum);
+    avg = sum/M;
+    avg2 = (sum/M) * (sum/M);
+    avg3 = integSqSum/M;
+    diff = avg3-avg2;
+    SD = Math.sqrt(diff);
+    System.out.println("avgerage of numbers: " + avg);
+    System.out.println("avg2: " + avg2);
+    System.out.println("avg3: " + avg3);
+    System.out.println("Diff: " + diff);
+    System.out.println("Standard Deviation: " + SD);
   }
 }
 

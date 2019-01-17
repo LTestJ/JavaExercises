@@ -12,8 +12,8 @@ public class Ex2_HarmonicSum
 
     while ( N >= 1 )
     {
-     sum = sum + 1.0/N;
-     N--;
+      sum = sum + 1.0/N;
+      N--;
     }
     System.out.println("Sum: " + sum );
   }
