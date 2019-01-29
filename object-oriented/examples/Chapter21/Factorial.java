@@ -1,5 +1,23 @@
 import  java.util.Scanner;
 
+/*
+F = 1
+F = F * 2 // 2
+F = F * 3 // 6
+F = F * 4 // 24
+F = F * 5 //120
+
+int N = 1; // initialize
+int F = 1;
+while (N <= 5) {  // condition
+{
+  F = F * N;  // <= work done in each step
+  N = N + 1; // loop variable updation
+}
+
+//F = ?
+
+*/
 public class Factorial
 {
   public static void main (String[] args )
