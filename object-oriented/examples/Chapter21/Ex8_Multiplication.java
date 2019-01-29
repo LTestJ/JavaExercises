@@ -19,29 +19,35 @@ public class Ex8_Multiplication
   public static void main (String[] args )
   {
     Scanner scan = new Scanner( System.in );
-    int N = 10;
+    int N = 1;
     int multiply;
+    int count =0;
     while (N <= 10) 
     {
-    System.out.print( "Enter first value, a: " );
-    int a = scan.nextInt();
-    System.out.print("Enter second value, b: ");
-    int b = scan.nextInt();
+      System.out.print( "Enter first value, a: " );
+      int a = scan.nextInt();
+      System.out.print("Enter second value, b: ");
+      int b = scan.nextInt();
 
-    System.out.println( "What is " + a + " * " + b + "?");
-    System.out.print("Enter result: " );
-    int resultInput = scan.nextInt();
+      System.out.println( "What is " + a + " * " + b + "?");
+      System.out.print("Enter result: " );
+      int resultInput = scan.nextInt();
 
-    int correct = a * b;
+      int correct = a * b;
       if ( resultInput == correct )
       {
         System.out.println ( "Right !! " );
+        count = count + 1;
       }
       else
       {
         System.out.println ("Wrong : " + a + " * " + b + " is " + correct);
       }
-    N = N + 1;
+      N = N + 1;
     }
+    System.out.println(" YOu have " + count + " out of 10 correct answers" );
   }
 }
+
+
+
