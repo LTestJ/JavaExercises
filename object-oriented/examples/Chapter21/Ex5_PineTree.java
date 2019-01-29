@@ -1,24 +1,13 @@
-// Initial number of stars:
-// 7
-
-// *******
-// ******
-// *****
-// ****
-// ***
-// **
-// *
-
 import java.util.Scanner;
 
-public class Ex4_wedgeOfStars
+public class Ex5_PineTree
 {
   public static void main (String[] args )
   {
     Scanner scan = new Scanner( System.in );
     int N;
 
-    System.out.print("Enter initial number of stars, N: " );
+    System.out.print("Enter initial number of rows, N: " );
     N = scan.nextInt();
 
     while ( N > 0)
