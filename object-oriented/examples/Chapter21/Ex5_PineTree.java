@@ -1,5 +1,14 @@
 import java.util.Scanner;
 
+/*
+0    *     1 = 0*2+1
+1   ***    3 = 1*2+1
+2  *****   5 = 2*2+1
+3    *     7 = 3*2+1
+4    *     9 = 4*2+1
+*/
+
+
 public class Ex5_PineTree
 {
   public static void main (String[] args )
