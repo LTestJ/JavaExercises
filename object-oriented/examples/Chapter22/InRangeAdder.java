@@ -5,30 +5,32 @@ public class InRangeAdder
   public static void main (String[] args )
   {
     Scanner scan = new Scanner( System.in );
-    int value, value1, value2;     // data entered by the user
-    int sumIn = 0;     // initialize the sum
+    int value, value1, value2;
+    int sumIn = 0;
     int sumOut = 0;
-
     System.out.print( "Low end of range: " );
     value1 = scan.nextInt();
     System.out.print("High end of range: ");
     value2 = scan.nextInt();
-
-    System.out.println("Enter data: ");
-    value = scan.nextInt();
-    if (value != 0)
+    while (true)
     {
-
-      while  ( value >= value1 && value <= value2 )
+      System.out.println("Enter data: ");
+      value = scan.nextInt();
+      if (value == 0)
+      {
+        System.out.println("Bye");
+        break;
+      }
+      else if  ( value >= value1 && value <= value2 )
       {
         sumIn = sumIn + value;
-        System.out.println( "Enter data: " );
+        System.out.println( "Enter your data: " );
         value = scan.nextInt();
       }
-//      while ( value < value1 && value > value2)
+      else
       {
         sumOut = sumOut + value;
-        System.out.println("Enter data: ");
+        System.out.println("Enter yours data: ");
         value = scan.nextInt();
       }
     }

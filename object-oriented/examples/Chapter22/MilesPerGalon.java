@@ -14,9 +14,10 @@ public class MilesPerGalon
     {
       System.out.print( "Initial Miles (enter -1 to quit): " );
       value1 = scan.nextInt();
-      if (value1 != -1)
+      if (value1 == -1)
       {
         System.out.println("Bye");
+        break;
       }
       else
       {
