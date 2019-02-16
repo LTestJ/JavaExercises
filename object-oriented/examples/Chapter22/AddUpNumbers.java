@@ -1,47 +1,47 @@
-import java.util.Scanner;
+import java.util.*;
 
 // Add up integers entered by the user.
 // After the last integer, the user enters a 0.
 //
 public class AddUpNumbers
 {
-  public static void main (String[] args ) 
+  public static void main (String[] args )
   {
     Scanner scan = new Scanner( System.in );
-    int value;             // data entered by the user
-    int sum = 0;
-    int count = 0;
+    String inputData;
     String suffix;
+    int value;             // integer entered by the user
+    int count = 0;         // how many integers added so far
+    int sum   = 0;         // initialize the sum
 
-      System.out.print( "Enter the first integer (enter 0 to quit): " );
-      value = scan.nextInt();
-      while (true)
-      {
-      if ( value == 0)
-      {
-        System.out.println("No integers were entered\n Bye ");
-        break;
-      }
+    // get the first value
+    System.out.println( "Enter first integer (enter 0 to quit):" );
+    value = scan.nextInt();
+
+    while ( value != 0 )
+    {
+      //add value to sum
+      sum   = sum + value;     // add current value to the sum
+      count = count + 1;       // one more integer added
+
+      // prompt for the next value
+      if ( count+1  == 2  )
+        suffix = "nd";
       else
-      {
-        sum = sum + value;
-        count = count + 1;
-        if ( count + 1 == 2)
-        {
-          suffix = "nd";
-        }
-        else
-        {
-          if (count + 1 == 3)
+        if ( count+1 == 3  )
           suffix = "rd";
-          else
+        else
           suffix = "th";
 
-        System.out.print("Enter the " + (count+1) + suffix + " integer (enter O to quit): " );
-        value = scan.nextInt();
-        }
-        System.out.println( " Sum of the integers: " + sum );
-      }
+      System.out.println( "Enter the " + (count+1) + suffix +
+                          " integer (enter 0 to quit):" );
+
+      //get the next value from the user
+      value = scan.nextInt();
+
     }
+
+    System.out.println( "Sum of the integers: " + sum );
   }
 }
+

@@ -7,12 +7,12 @@ public class MilesPerGalon
   {
     Scanner scan = new Scanner( System.in );
     int value1, value2;
-    int mileage = 0;
-    int galon = 0;
+    float mileage = 0;
+    float galon = 0;
 
     while (true)
     {
-      System.out.print( "Initial Miles (enter -1 to quit): " );
+      System.out.print( "\n\nEnter Initial Miles (-1 to quit): " );
       value1 = scan.nextInt();
       if (value1 == -1)
       {
@@ -21,10 +21,10 @@ public class MilesPerGalon
       }
       else
       {
-        System.out.print("\nEnter Final Miles: ");
+        System.out.print("Enter Final Miles: ");
         value2 = scan.nextInt();
         System.out.print("Galon: ");
-        galon = scan.nextInt();
+        galon = scan.nextFloat();
         mileage = (value2 - value1)/galon;
         System.out.print("Miles per Galon: " + mileage );
       }

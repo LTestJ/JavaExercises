@@ -12,7 +12,7 @@ public class ShippingCost
 
     while (true)
     {
-      System.out.print( "Enter weight: " );
+      System.out.print( "\nEnter weight of order: " );
       weight = scan.nextInt();
 
       if (weight <= 0)
@@ -22,12 +22,12 @@ public class ShippingCost
       }
       else if (weight <= 10)
       {
-        System.out.println("Shipping cost: " + handling );
+        System.out.println("Shipping cost:$" + handling );
       }
       else
       {
         cost = handling + rate * (weight - 10);
-        System.out.println( "Total cost: " + cost );
+        System.out.println( "Total cost:$" + cost );
       }
     }
   }
