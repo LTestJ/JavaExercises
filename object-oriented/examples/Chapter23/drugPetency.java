@@ -11,20 +11,35 @@ public class drugPetency
 
     System.out.print("Enter Percentage Loss: ");
     percentLoss = scan.nextDouble();
+    System.out.println("Month: " + month + " Effectiveness: " + efficiency);
 
-    while (efficiency >= 50)
+    while (true)
     {
-
-      System.out.println("Month: " + month + " Effectiveness: " + efficiency);
-
       efficiency = (efficiency - efficiency * percentLoss/100);
       month = month + 1;
+      System.out.println("Month: " + month + " Effectiveness: " + efficiency);
 
       if (efficiency < 50)
       {
-        System.out.println("Discard");
+        System.out.println("Time to Discard");
         break;
       }
     }
   }
 }
+
+/*
+   while(true) {
+
+     //compute effectiveness
+
+     // print
+
+     // check if we need to exit
+    if () {
+     break;
+    }
+   }
+
+*/
+
