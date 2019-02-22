@@ -1,10 +1,13 @@
 import java.util.Scanner;
+import java.text.*;
 
 public class CreditCardPay
 {
   public static void main (String[] args )
   {
     Scanner scan = new Scanner( System.in );
+    DecimalFormat numform = new DecimalFormat();
+
     double balanceAmt;
     double rate;
     double monthly;
@@ -33,7 +36,8 @@ public class CreditCardPay
         break;
       }
 */
-      System.out.println("Month: " + month + " Balance Amount: " + balanceAmt + " Total payment: " + monthlyTot );
+      System.out.println("Month: " + month + "\tBalance Amount: " + numform.format(balanceAmt) + 
+         "\tTotal payment: " + monthlyTot );
 
     }
   }
