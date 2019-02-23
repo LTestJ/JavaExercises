@@ -4,33 +4,34 @@ public class SumTwoSquares
 {
   public static void main (String[] args )
   {
-
     Scanner scan = new Scanner( System.in );
     int sumOfSquares = 0;
-    int a = 1; int b = 1;
 
     System.out.print("Enter the integer: ");
     int n = scan.nextInt();
 
-    for (int i = 1; i <= n; i++)
+    for (int a = 1; a <= n; a++)
     {
-
-      for (int j = 1; j <= n; j++)
+      for (int b = 1; b <= n; b++)
       {
-
         if ( a * a + b * b == n)
         {
-          sumOfSquares = sumOfSquares + i;
-          System.out.println( n + " is sum of squares");
+          sumOfSquares = sumOfSquares + (a * a + b * b) ;
+          System.out.println( n + " is sum of squares of two integers " + a + " and " + b);
+          break;
         }
-        else
+/*        else
         {
-          System.out.println("Not sum of two integers");
+          System.out.println("Not sum of squares of two integers");
+          break;
         }
+*/
+      }
+      if ( a * a > n)
+      {
+        break;
       }
     }
-
-//    System.out.println(n + " is Sum of Squares of two integers " + a + " , " + b);
   }
 }
 
