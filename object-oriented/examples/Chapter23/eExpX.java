@@ -17,27 +17,22 @@ public class eExpX
   {
     Scanner scan = new Scanner( System.in );
     double n = 0;
-    double sum = 0;
+    double sum = 1;
     double term = 1;
-    double fact = 1;
 
     System.out.print("Enter x: ");
     double x = scan.nextDouble();
-//    sum = sum + term;
-//    System.out.println("n: " + n + "\t term: " + term + "\t Sum: " + sum);
     System.out.println("real e^"+ x + " = " +  Math.exp(x));
 
     while (true)
     {
-
-      term = term + x/n * Math.pow(x,(n-1))/(fact * (n-1));
-      sum  = sum  + term;
       n = n + 1;
+      term = term * x/n;
+      sum  = sum  + term;
 
       System.out.println("n: " + n + "\t term: " + term + "\t Sum: " + sum);
 
-      if (n >= 20)
-//      if (term < 1.0E-12)
+      if (term < 1.0E-12)
       {
         break;
       }

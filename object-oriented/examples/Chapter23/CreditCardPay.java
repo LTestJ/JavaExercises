@@ -24,7 +24,7 @@ public class CreditCardPay
 
     while (balanceAmt >= 0)
     {
-      interestDue = (balanceAmt - monthly) * rate/100;
+      interestDue = balanceAmt * rate/100;
       balanceAmt = (balanceAmt - monthly) + interestDue;
 
       month = month + 1;
