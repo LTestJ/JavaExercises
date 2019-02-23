@@ -5,7 +5,7 @@ public class SheepHered
 {
   public static void main (String[] args )
   {
-    DecimalFormat numform = new DecimalFormat();
+    DecimalFormat numform = new DecimalFormat("0.0");
     double N = 20;
     double t = 0;
 
