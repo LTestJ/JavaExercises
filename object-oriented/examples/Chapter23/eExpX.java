@@ -5,7 +5,7 @@ e ^ x = 1 +  x/1! + (x^2)/2! + (x^3)/3! + ......  -------(1)
 e^x = Sigma (x^n)/n! -------- (2)
 
 user will input x.
-We need to find e^x. 
+We need to find e^x.
 
 */
 
@@ -16,20 +16,21 @@ public class eExpX
   public static void main (String[] args )
   {
     Scanner scan = new Scanner( System.in );
-    double n = 1;
+    double n = 0;
     double sum = 0;
     double term = 1;
     double fact = 1;
 
-    System.out.println("Enter x: ");
+    System.out.print("Enter x: ");
     double x = scan.nextDouble();
-    sum = sum + term;
-    System.out.println("n: " + n + "\t term: " + term + "\t Sum: " + sum);
+//    sum = sum + term;
+//    System.out.println("n: " + n + "\t term: " + term + "\t Sum: " + sum);
+    System.out.println("real e^"+ x + " = " +  Math.exp(x));
 
     while (true)
     {
-//      term =  term + Math.exp(x);
-      term = term + Math.pow(x,n)/(fact * n);
+
+      term = term + x/n * Math.pow(x,(n-1))/(fact * (n-1));
       sum  = sum  + term;
       n = n + 1;
 
