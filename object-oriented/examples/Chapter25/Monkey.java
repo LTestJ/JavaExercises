@@ -13,13 +13,13 @@ public class Monkey
 
     for (int i = (n-1); i <= monk.length; i--)
     {
-       System.out.println("\n" + monk[i] + " little monkeys swinging in a tree\nTeasing Mr Crocodile" + "\"you can't catch me\"");
-       System.out.println("Along came the crocodile as quiet as can be\nand SNAP!");
+      System.out.println("\n" + monk[i] + " little monkeys swinging in a tree\nTeasing Mr Crocodile" + "\"you can't catch me\"");
+      System.out.println("Along came the crocodile as quiet as can be\nand SNAP!");
 
-       if (i == 0)
-       {
-         break;
-       }
+      if (i == 0)
+      {
+        break;
+      }
     }
 
     System.out.println("\nNo little monkeys swinging in a tree\nNo little monkeys swinging in a tree");
