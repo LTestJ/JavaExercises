@@ -6,7 +6,7 @@ public class Monkey
   {
 
     Scanner scan = new Scanner(System.in);
-    System.out.print("Enter n: ");
+    System.out.print("Enter # Monkeys, n: ");
     int n = scan.nextInt();
 
     String[] monk = {"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"};
