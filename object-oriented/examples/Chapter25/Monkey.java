@@ -8,19 +8,22 @@ public class Monkey
     Scanner scan = new Scanner(System.in);
     System.out.print("Enter n: ");
     int n = scan.nextInt();
-    int num = 0;
 
-    for (int i = 1; i <= n; i++)
+    String[] monk = {"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"};
+
+    for (int i = (n-1); i <= monk.length; i--)
+//    for (int i = 1; i <= n; i++)
     {
-      num = num + i;
-      System.out.println(num);
-
-      if ( i * i == num)
-      {
-        System.out.println("\nThree little monkeys swinging in a tree\nTeasing Mr Crocodile" + "\"you can't catch me\"");
+        System.out.println("\n" + monk[i] + " little monkeys swinging in a tree\nTeasing Mr Crocodile" + "\"you can't catch me\"");
         System.out.println("Along came the crocodile as quiet as can be\nand SNAP!");
+
+      if (i == 0)
+      {
+        break;
       }
     }
+    System.out.println("\nNo little monkeys swinging in a tree\nNo little monkeys swinging in a tree");
+
   }
 }
 
