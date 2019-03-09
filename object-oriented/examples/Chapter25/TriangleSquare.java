@@ -17,9 +17,11 @@ public class TriangleSquare
           System.out.println("Square and Triangular Number: " + i);
       }
     }
-  }
 
-  boolean isSquareNumber(int n) {
+  }
+  
+  /*1 4 9 16 25 36 ...*/
+  static boolean isSquareNumber(int n) {
     // Write algorithm for this function
     for (int i=1; i < n/2; i++)
     {
@@ -32,19 +34,12 @@ public class TriangleSquare
     return false;
   }
 
-  boolean isTriangleNumber(int n) {
-    for (int j=1; j< n/2; j++)
-    {
-      if (j * j == n)
-      {
-        return true;
-      }
-    }
-    return false;
-
+  /*1 3 6 10 15 21 28 ...*/ 
+  // Logic : n is triangle number iff 8n + 1 is perfect square
+  static boolean isTriangleNumber(int n) {
+    return isSquareNumber(8*n+1);
   }
 }
-
 
 
 
