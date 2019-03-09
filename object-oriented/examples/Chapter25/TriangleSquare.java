@@ -6,26 +6,45 @@ public class TriangleSquare
   {
 
     Scanner scan = new Scanner(System.in);
-    System.out.print("\"Enter n: \"");
+    System.out.print("Enter n: ");
     int n = scan.nextInt();
 
-    int num = 1;
-//    System.out.println(num);
+    int num = 0;
 
-    for (int i = 2; i <= n; i++)
+    for (int i = 1; i <= n; i++)
     {
-      num = num + i;
-//      System.out.println(num);
+      if (isSquareNumber(i) && isTriangleNumber(i)) {
+          System.out.println("Square and Triangular Number: " + i);
+      }
+    }
+  }
 
-      for (int j = 1; j <= n; j++)
+  boolean isSquareNumber(int n) {
+    // Write algorithm for this function
+    for (int i=1; i < n/2; i++)
+    {
+      if (i * i == n)
       {
-//        if ( j * j == num)
-        if (Math.sqrt(num) == j)
-        {
-          System.out.println("Square and Triangular Number: "  + num);
-        }
+        return true;
       }
 
     }
+    return false;
+  }
+
+  boolean isTriangleNumber(int n) {
+    for (int j=1; j< n/2; j++)
+    {
+      if (j * j == n)
+      {
+        return true;
+      }
+    }
+    return false;
+
   }
 }
+
+
+
+
