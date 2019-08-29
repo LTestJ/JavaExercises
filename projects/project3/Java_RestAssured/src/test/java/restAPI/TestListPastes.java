@@ -20,10 +20,21 @@ import io.restassured.specification.RequestSpecification;
 public class TestListPastes {
 	
 	@Test
-	public void listNewPastes() throws IOException
+	public void listPastes() throws IOException
 	{	
-				
-		//Step3: Listing the pastes		
+		//Step1: Create paste	
+		String randomSuffix = String.valueOf(TestHelp.getRandomNum());
+		String content = "My content" + randomSuffix;
+		String title = "MyTitle" + randomSuffix; 
+		String pasteKey = TestHelp.createPasteWithTitle(content, title);
+		
+        //Step 2 : Verify validity of the created paste
+        String pasteURL = "https://pastebin.com/" + pasteKey;
+        HttpURLConnection pasteConn = TestHelp.getURL(pasteURL);
+        int urlStatus = pasteConn.getResponseCode();
+        Assert.assertEquals(urlStatus, 200);
+		
+		//Step3: Listing all pastes of the user		
 		RequestSpecification request=RestAssured.given();
 		request.header("Content-Type","application/x-www-form-urlencoded");	
 		request.body("api_dev_key=6c2e400f5df158b657b692687c0dc347&"
