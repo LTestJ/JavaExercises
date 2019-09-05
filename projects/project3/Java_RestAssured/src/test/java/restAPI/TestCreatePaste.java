@@ -37,7 +37,7 @@ public class TestCreatePaste {
         int urlStatus = pasteConn.getResponseCode();
         Assert.assertEquals(urlStatus, 200);
 
-        //Step 3: Verify the fetched paste is what we created in Step 1.
+        //Step 3: Verify fetched paste has the same content as created in Step 1.
         String rawPasteURL = "https://pastebin.com/raw/" + pasteKey;
         HttpURLConnection rawPasteConn = TestHelp.getURL(rawPasteURL);        
         //Get content here

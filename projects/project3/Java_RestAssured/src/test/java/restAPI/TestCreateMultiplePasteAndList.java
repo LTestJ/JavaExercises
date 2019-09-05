@@ -48,16 +48,7 @@ public class TestCreateMultiplePasteAndList {
 	public void deletePaste(String pasteKey) throws IOException 
 	{	
 		//Function to delete the created paste		
-		RequestSpecification request=RestAssured.given();
-		request.header("Content-Type","application/x-www-form-urlencoded");	
-		request.body("api_dev_key=6c2e400f5df158b657b692687c0dc347&"
-				   + "api_user_key=8c87a30fd3d053bcbf2887fad3abcc85&" 
-				   + "api_option=delete&"
-				   + "api_paste_key=" + pasteKey);	
-		
-		Response response=request.post("https://pastebin.com/api/api_post.php");		
-		int responseStatus=response.getStatusCode();	
-		Assert.assertEquals(responseStatus, 200);
+		TestHelp.deletePaste(pasteKey);
 		
 		//Verify deleted paste does not exist		
 		String url1 = "https://pastebin.com/" + pasteKey;	

@@ -28,7 +28,7 @@ public class TestCreatePasteWithTitle {
 		String randomSuffix = String.valueOf(TestHelp.getRandomNum());
 		String content = "My content" + randomSuffix;
 		String title = "My Title" + randomSuffix;
-		String pasteKey = TestHelp.createPasteWithTitle(content, title);
+		String pasteKey = TestHelp.createPasteWithTitle(title, content);
 				
 		//Step2: Fetching the created paste and checking for validity
 		String url1 = "https://pastebin.com/" + pasteKey;
@@ -50,13 +50,5 @@ public class TestCreatePasteWithTitle {
         }  
         //assert the content is same as content1 above
         Assert.assertEquals(content1.toString(), content);
-      
-        //Step4: verify created paste has the same title as in step1.
-        String rawTitle;
-        StringBuffer title1 = new StringBuffer();
-        while ((rawTitle =in.readLine()) != null) {
-        	title1.append(rawTitle);
-        }
-        Assert.assertEquals(title1.toString(), title);
 	}	
 }

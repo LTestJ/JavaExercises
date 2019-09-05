@@ -24,34 +24,18 @@ public class TestCreatePastePrivate2 {
     @Test
 	public void testCreatePastePrivate2() throws IOException
 	{	
-		//Step1: calling createNewPaste()	
+		//Step1: create private Paste
 		String randomSuffix = String.valueOf(TestHelp.getRandomNum());
 		String content = "My content" + randomSuffix;
 		String pasteKey = TestHelp.createPastePrivate2(content);
 
-		//Step2: Fetching the created paste for validity		
+		//Step2: Checking the created paste for validity		
 		String url1 = "https://pastebin.com/" + pasteKey;
 		HttpURLConnection huc =  TestHelp.getURL(url1);	 		
 	    int urlStatus = huc.getResponseCode();
 		Assert.assertEquals(urlStatus, 200);	
-		System.out.println("url: " + url1);
 		
-		//Step3: verify created paste has the same content and is private
-		String rawPasteURL = "https://pastebin.com/raw/" + pasteKey;
-        HttpURLConnection rawPasteConn = TestHelp.getURL(rawPasteURL);        
-        //Get content here
-        BufferedReader in = new BufferedReader(
-        		 new InputStreamReader(rawPasteConn.getInputStream()));
-        String rawContent;
-        StringBuffer content1 = new StringBuffer();
-        while ((rawContent = in.readLine()) != null) {
-        	content1.append(rawContent);
-        } 
-        System.out.println("Content1: " + content1);
-        System.out.println("Content: " + content);  
-        //assert the content is same as content1 above
-        Assert.assertEquals(content1.toString(), content);
-        
-	    //Step4: verify created paste has the same title as in step1
+		//Step3: verify created paste has the same content is same as in step1
+		//Step3 Cannot be verified because paste is private
 	}	
 }

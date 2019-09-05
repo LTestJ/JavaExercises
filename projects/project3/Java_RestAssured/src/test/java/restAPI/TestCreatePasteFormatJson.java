@@ -21,8 +21,7 @@ import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
 
 public class TestCreatePasteFormatJson  {
-	
-	
+		
 	@Test
 	public void testCreatePasteFormatJson() throws IOException
 	{	

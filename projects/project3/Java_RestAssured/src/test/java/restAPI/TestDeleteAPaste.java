@@ -28,16 +28,7 @@ public class TestDeleteAPaste {
 		String pasteKey = TestHelp.createPaste(content);
 
 		//Step2: Fetching and deleting the paste
-		RequestSpecification request=RestAssured.given();
-		request.header("Content-Type","application/x-www-form-urlencoded");	
-		request.body("api_dev_key=6c2e400f5df158b657b692687c0dc347&"
-				   + "api_user_key=8c87a30fd3d053bcbf2887fad3abcc85&" 
-				   + "api_option=delete&"
-				   + "api_paste_key=" + pasteKey);	
-		
-		Response response=request.post("https://pastebin.com/api/api_post.php");		
-		int responseStatus=response.getStatusCode();	
-		Assert.assertEquals(responseStatus, 200);
+		TestHelp.deletePaste(pasteKey);
 		
 		//Step3: verify obtained paste is completely deleted 
 		String rawPasteURL = "https://pastebin.com/" + pasteKey;	

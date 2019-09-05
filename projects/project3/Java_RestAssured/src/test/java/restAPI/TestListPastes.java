@@ -26,7 +26,7 @@ public class TestListPastes {
 		String randomSuffix = String.valueOf(TestHelp.getRandomNum());
 		String content = "My content" + randomSuffix;
 		String title = "MyTitle" + randomSuffix; 
-		String pasteKey = TestHelp.createPasteWithTitle(content, title);
+		String pasteKey = TestHelp.createPasteWithTitle(title, content);
 		
         //Step 2 : Verify validity of the created paste
         String pasteURL = "https://pastebin.com/" + pasteKey;
@@ -47,5 +47,8 @@ public class TestListPastes {
 		int responseStatus=response.getStatusCode();	
 		Assert.assertEquals(responseStatus, 200);
 		System.out.println(response.asString());
+		
+		//Verify that created paste is listed
+		
 	}	
 }

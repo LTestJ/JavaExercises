@@ -28,33 +28,28 @@ public class TestDeleteMultiplePastes {
 			String randomSuffix = String.valueOf(TestHelp.getRandomNum());
 			String content = "My content" + randomSuffix;
 			String title = "My Title" + randomSuffix;
-			pasteKey[i] = TestHelp.createPasteWithTitle(content, title);
+			pasteKey[i] = TestHelp.createPasteWithTitle(title, content);
+			String rawPasteURL = "https://pastebin.com/" + pasteKey[i];	
+			System.out.println(rawPasteURL);
 		}
 		
 		//Step2: deleting pastes
-		for (int i = 0; i < 3; i++) {		
-			RequestSpecification request=RestAssured.given();
-			request.header("Content-Type","application/x-www-form-urlencoded");	
-			request.body("api_dev_key=6c2e400f5df158b657b692687c0dc347&"
-					   + "api_user_key=8c87a30fd3d053bcbf2887fad3abcc85&" 
-					   + "api_option=delete&"
-					   + "api_paste_key=" + pasteKey[i]);	
-		
-			//Sending request to Delete pastes
-			Response response=request.post("https://pastebin.com/api/api_post.php");		
-			int responseStatus=response.getStatusCode();	
-			Assert.assertEquals(responseStatus, 200);
+		for (int i = 0; i < 3; i++) {	
+			TestHelp.deletePaste(pasteKey[i]);
+//			try { Thread.sleep(5000); } catch (Exception e) {}
+			Thread.sleep(5000);
 		}
 		
-		//Step3: verify deletion of pastes -- verify pastes do not exist
+		//Step3: verify deletion of pastes
+		//showing captcha error
 		for (int i = 0; i < 3; i++) {			
-			//showing captcha error??
 			String rawPasteURL = "https://pastebin.com/" + pasteKey[i];	
 			System.out.println(rawPasteURL);
 		    HttpURLConnection rawPasteConn = TestHelp.getURL(rawPasteURL); 
 		    int urlStatus = rawPasteConn.getResponseCode();
 			Assert.assertEquals(urlStatus, 404);	
-			Thread.sleep(10000);
+			Thread.sleep(5000);
+
 		}		
 	}	
 }

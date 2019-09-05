@@ -49,7 +49,7 @@ public class TestCreateMultiplePastes {
 		//step 3: verify each obtained paste is complete
 		for (int i = 0; i < 3; i++) {				
 			String rawPasteURL = "https://pastebin.com/" + pasteKey[i];	
-			System.out.println(rawPasteURL);
+//			System.out.println(rawPasteURL);
 		    HttpURLConnection rawPasteConn = TestHelp.getURL(rawPasteURL); 
 		    int urlStatus = rawPasteConn.getResponseCode();
 			Assert.assertEquals(urlStatus, 200);		
